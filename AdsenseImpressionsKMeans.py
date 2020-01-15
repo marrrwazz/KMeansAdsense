@@ -11,8 +11,9 @@ import matplotlib.pyplot as plt
 data = pd.read_csv("AdsenseImpressions.csv")
 
 #drop missing values (--)
+#note: if there is a missing value in Abs. Top then there is also a
+#      missing value in Top.
 index2Drop = data[data['Impr. (Abs. Top) %']==" --"].index
-index2Drop2 = data[data['Impr. (Top) %']==" --"].index
 data = data.drop(index=index2Drop)
 
 #Keep only the two features needed
